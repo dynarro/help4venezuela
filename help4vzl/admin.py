@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
-from .models import Categories,Cases,Postulation, Organization, Organization_User
+from .models import Categories,Cases,Postulation, Organization, OrganizationUser, Collaborator
 # Register your models here.
 @admin.register(Categories)
 class CategoriesAdmin(admin.ModelAdmin):
