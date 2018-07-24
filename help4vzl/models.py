@@ -14,7 +14,7 @@ class Categories(models.Model):
 class Cases(models.Model):
     category=models.ForeignKey(Categories, null=True, blank=True)
     description=models.TextField(null=True, blank=True)
-    attachments=forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple':True}))
+    attachments=models.FileField(null=True, blank=True, upload_to='documents/%Y')
     organization=models.ForeignKey('Organization', null=True, blank=True)
     STATUS_CHOICES=(
         ('NEW', 'New'),
@@ -30,7 +30,7 @@ class Postulation(models.Model):
     phone_number=models.CharField(max_length=13, default=0)
     logo=models.ImageField(null=True, blank=True, upload_to="logos/%Y")
     motivation=models.TextField(null=True, blank=True)
-    attachments=forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple':True}))
+    attachments=models.FileField(null=True, blank=True, upload_to='documents/%Y')
     STATUS_CHOICES=(
         ('APROVED','Aproved'),
         ('PENDING','Pending'),
