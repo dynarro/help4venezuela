@@ -1,0 +1,35 @@
+{% extends 'help4vzl/base.html' %}
+
+{% block content %}
+
+ <h2 style="font-family:'Merriweather Sans',sans-serif;color:#114870;">Your Postulation</h2>
+ </br>
+ </br>
+ </br>
+    <a  target="_blank" title="Modify" href="{% url 'postulation_edit' pk=postulation.pk %}"><i class="fa fa-edit" style="font-size:36px;padding-left:100%"></i></a>
+    <div class="col-md-8 col-md-offset-5">
+            </br>
+        <div  style="text-align:left">
+            <h4 style="font-family: 'Merriweather Sans', sans-serif;">Organization info:</h4></br>
+            {% if postulation.logo %}<img src="{{postulation.logo.url}}" class="img-responsive" height="75px" width="75px"/>{% endif %}
+            </br>
+            <p class="postulation-text"><b>Name: </b>{{postulation.name}}</p>
+            <p class="postulation-text"><b>Email: </b>{{postulation.email}}</p>
+            <p class="postulation-text"><b>Phone Number: </b>{{postulation.phone_number}}</p>
+            {% if postulation.attachments %}
+            <p class="postulation-text">
+                <b>Attachments: </b>
+                <a target="_blank" title="Open file" href="{{ postulation.attachments.url}}">
+                    <span style="font-size:16px;">PDF </span><span class="glyphicon glyphicon-file" style="vertical-align:middle;">
+                </a>
+            </p>{% endif %}
+        </div>
+        <hr width="50%" align="left">
+        <div class="center-justified">
+        </br>
+            <center><h4 style="font-family: 'Merriweather Sans', sans-serif;">Postulation</h4></center>
+        </br>
+            <p class="postulation-text">{{postulation.motivation}}</p>
+        </div>
+
+{% endblock %}

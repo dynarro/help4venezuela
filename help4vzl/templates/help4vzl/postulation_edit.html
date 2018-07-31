@@ -1,0 +1,76 @@
+{% extends 'help4vzl/base.html' %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+{% block content %}
+<div>
+    <p class="postulation-text" style="font-size:20px; text-align:justify;">
+        Creating a postulation will allow you as an organization to become a former mediatory and be able to manage cases that need attention.
+    </p>
+</br>
+</div>
+
+<div>
+    <!-- block of caterogories related to a case -->
+</div>
+
+<div>
+    <div class="col-md-12 col-md-offset-3">
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title" style="text-align:center;font-size:18px;font-family: 'Merriweather Sans', sans-serif;">
+                    <b style="color:#114870;">Create a postulation</b>
+                </h3>
+            </div>
+            <div class="panel-body" style="text-align:center">
+                <form method="POST" class="form-horizontal">{% csrf_token %}
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">Name <span style="color:red">*</span>:</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="form-control" name="name" placeholder="Name" required="True"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">Email <span style="color:red">*</span>:</label>
+                        <div class="col-xs-8">
+                            <input type="email" class="form-control" name="email" placeholder="Email" required="True"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">Phone Number <span style="color:red">*</span>:</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="form-control" name="phone_number" placeholder="Phone number"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">Motivation <span style="color:red">*</span>:</label>
+                        <div class="col-xs-8">
+                            <textarea class="form-control" name="motivation" placeholder="I'm applying this postulation because..." cols="40" rows="10" required="True"/></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">Attachments:</label>
+                        <div class="col-xs-8">
+                            <input type="file" class="form-control" name="attachments" multiple/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">Logo:</label>
+                        <div class="col-xs-8">
+                            <input type="file" class="form-control" name="logo"/>
+                        </div>
+                    </div>
+                    </br>
+                    <hr width="100%" align="center">
+                    <center>
+                        <input class="btn btn-success btn-block" type="submit" value="Save"/>
+                    </center>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

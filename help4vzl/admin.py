@@ -2,16 +2,16 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
-from .models import Categories,Cases,Postulation, Organization, OrganizationUser, Collaborator
+from .models import Categorie,Case,Postulation, Organization, OrganizationUser, Collaborator
 # Register your models here.
-@admin.register(Categories)
-class CategoriesAdmin(admin.ModelAdmin):
+@admin.register(Categorie)
+class CategorieAdmin(admin.ModelAdmin):
     list_display=('name',)
     list_filter=('name',)
 
 
-@admin.register(Cases)
-class CasesAdmin(admin.ModelAdmin):
+@admin.register(Case)
+class CaseAdmin(admin.ModelAdmin):
     list_display=('category','description','attachments',)
     list_filter=('category',)
 

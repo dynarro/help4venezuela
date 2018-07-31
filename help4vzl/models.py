@@ -7,12 +7,12 @@ from django.db.models import IntegerField
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 
-class Categories(models.Model):
+class Categorie(models.Model):
     name=models.CharField(max_length=50)
     description=models.TextField(null=True, blank=True)
 
-class Cases(models.Model):
-    category=models.ForeignKey(Categories, null=True, blank=True)
+class Case(models.Model):
+    category=models.ForeignKey(Categorie, null=True, blank=True)
     description=models.TextField(null=True, blank=True)
     attachments=models.FileField(null=True, blank=True, upload_to='documents/%Y')
     organization=models.ForeignKey('Organization', null=True, blank=True)
@@ -26,8 +26,8 @@ class Cases(models.Model):
 
 class Postulation(models.Model):
     name=models.CharField(max_length=50)
-    email=forms.EmailField()
-    phone_number=models.CharField(max_length=13, default=0)
+    email=models.EmailField(null=True)
+    phone_number=models.CharField(max_length=13)
     logo=models.ImageField(null=True, blank=True, upload_to="logos/%Y")
     motivation=models.TextField(null=True, blank=True)
     attachments=models.FileField(null=True, blank=True, upload_to='documents/%Y')

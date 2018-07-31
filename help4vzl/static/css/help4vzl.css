@@ -1,0 +1,102 @@
+.page-header{
+    background-color:#114870;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding-top:0%;
+    padding-bottom:10%;
+    height: 20%;
+    margin-top: 0;
+    padding: 20px 20px 20px 20px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+      color: #ffffff;
+      font-size: 35pt;
+      text-align: center;
+      vertical-align: middle;
+      text-decoration: none;
+ }
+
+ h1, h2, h3, h4 {
+     font-family: 'Hind', sans-serif;
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: Transparent;
+    color: white;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: Transparent;
+    color: #1ec279;
+}
+
+.postulation-form textarea, .postulation-form input {
+    width: 100%;
+}
+/* css for category box */
+div.category{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid grey;
+}
+
+/* text block on the category box */
+.text-block {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.center-justified {
+  text-align: justify;
+  margin: 0 auto;
+  width: 30em;
+}
+
+p.postulation-text {
+    font-family: 'Abel', sans-serif;
+    font-size: 16px;
+}
