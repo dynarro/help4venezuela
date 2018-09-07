@@ -34,13 +34,14 @@ class Postulation(models.Model):
     attachments=models.FileField(null=True, blank=True, upload_to='documents/%Y')
     organization=models.ForeignKey('Organization', null=True, blank=True)
     STATUS_CHOICES=(
-        ('APROVED','Aproved'),
+        ('NEW','New'),
         ('PENDING','Pending'),
         ('REVIEWED','Reviewed'),
+        ('APROVED','Aproved'),
         ('REJECTED','Rejected'),
 
         )
-    status=models.CharField(choices=STATUS_CHOICES, default='PENDING', max_length=10)
+    status=models.CharField(choices=STATUS_CHOICES, default='NEW', max_length=10)
 
 class Organization(models.Model):
     name=models.CharField(max_length=100)
