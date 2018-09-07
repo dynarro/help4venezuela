@@ -20,6 +20,7 @@ class Case(models.Model):
         ('NEW', 'New'),
         ('APROVED','Aproved'),
         ('PENDING','Pending'),
+        ('REVIEWED','Reviewed'),
         ('REJECTED','Rejected'),
         )
     status=models.CharField(choices=STATUS_CHOICES, default='NEW', max_length=10)
@@ -31,10 +32,13 @@ class Postulation(models.Model):
     logo=models.ImageField(null=True, blank=True, upload_to="logos/%Y")
     motivation=models.TextField(null=True, blank=True)
     attachments=models.FileField(null=True, blank=True, upload_to='documents/%Y')
+    organization=models.ForeignKey('Organization', null=True, blank=True)
     STATUS_CHOICES=(
         ('APROVED','Aproved'),
         ('PENDING','Pending'),
+        ('REVIEWED','Reviewed'),
         ('REJECTED','Rejected'),
+
         )
     status=models.CharField(choices=STATUS_CHOICES, default='PENDING', max_length=10)
 

@@ -1,4 +1,6 @@
 {% load staticfiles %}
+{# Load the bootstrap tags library #}
+{% load bootstrap3 %}
 <html>
     <head>
         <title>Help 4 Venezuela</title>
@@ -25,6 +27,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Abel|Asap|Merriweather+Sans:300i|Patrick+Hand|Anton|Fjalla+One" rel="stylesheet">
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+        {# Load CSS and JavaScript #}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+
+        {# Display django.contrib.messages as Bootstrap alerts #}
+        {% bootstrap_messages %}
 
     </div>
     <div class="content container">

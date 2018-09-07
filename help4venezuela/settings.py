@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'help4vzl',
     'django_extensions',
+    'bootstrap3'
 ]
 
 MIDDLEWARE = [

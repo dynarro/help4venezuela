@@ -1,0 +1,15 @@
+{% extends 'help4vzl/base.html' %}
+
+{% block categories %}
+    {% for category in categories  %}
+        <div class="row">
+              <div class="column">
+                <img src="" style="width:100%">
+                <div class="text-block">
+                    <h4>{{category.name}}</h4>
+                    <p>{{category.description}}</p>
+                </div>
+              </div>
+        </div>
+    {% endfor %}
+{% endblock %}
