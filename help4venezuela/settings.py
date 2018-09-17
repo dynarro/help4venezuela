@@ -10,6 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
+# For emails
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'help4venezuela18@gmail.com'
+EMAIL_HOST_PASSWORD = 'medavaina'
+EMAIL_PORT = 587
+ADMINS = [('admin', 'help4venezuela18@gmail.com'),]
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -25,7 +32,7 @@ SECRET_KEY = '#m-+0jl7jw(z*6z+*pg6ex^*zp#!)d77q&e*jaozv7_xy*4gc#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','help4venezuela.com','127.0.0.1:8000', 'help4venezuela.com:8000']
 
 
 # Application definition
@@ -37,10 +44,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'help4vzl',
     'django_extensions',
     'bootstrap3'
 ]
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

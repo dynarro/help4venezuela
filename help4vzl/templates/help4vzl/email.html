@@ -1,0 +1,6 @@
+<html>
+    <body>
+        <p>Congratulations! {{postulation.name}},</br> You have just created your postulation. You can now make modifications to your postulation if you think it's needed by going to this link:</p>
+        <a href="{{domain}}{% url 'postulation_detail' pk=postulation.pk %}">Take a look at your postulation</a>
+    </body>
+</html>

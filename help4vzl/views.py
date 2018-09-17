@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.conf import settings
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import PostulationForm
 from .models import Postulation, Categorie
+from django.contrib.sites.shortcuts import get_current_site
+
+
 
 def postulation(request):
     return render(request, 'help4vzl/postulation.html', {})
@@ -46,6 +50,7 @@ def postulation_edit(request, pk):
             return render(request, 'help4vzl/postulation_edit.html', {'form': form, 'postulation': postulation})
         else:
             raise Http404("Invalid postulation for this user")
+
 def category_list(request):
     categories = Categorie.objects.all()
     return render(request, 'help4vzl/category_list.html', {'categories':categories})
