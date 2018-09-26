@@ -1,0 +1,69 @@
+
+
+.content h1 {
+  font-family: 'Do Hyeon', sans-serif;
+  color: #E8E9DC;
+  text-shadow: 0px 0px 300px #000;
+  font-size: 525%;
+
+}
+
+.btn{
+  border-radius: 5px;
+  color: #000000;
+  font-size: 40px;
+  padding: 10px 20px;
+  border: solid #000000;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Do Hyeon', sans-serif;
+
+}
+.intro {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  background: url(http://elbilluyo.com/wp-content/uploads/2017/08/AR-141009962.jpg) no-repeat 50% 50%;
+  display: table;
+  top: 0;
+  background-size: cover;
+}
+.intro, .inner {
+  display: table-cell
+  vertical-align: middle;
+  width: 100%;
+  max-width: none;
+}
+.content {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Do Hyeon', sans-serif;
+}
+.content h1 {
+  font-family: 'Do Hyeon', sans-serif;
+  color: #000000;
+  text-shadow: 0px 0px 300px #000;
+  font-size: 525%;
+
+
+}
+
+.btn{
+  border-radius: 5px;
+  color: #000000;
+  font-size: 40px;
+  padding: 10px 20px;
+  border: solid #000000;
+  text-transform: uppercase;
+  text-decoration: none;
+
+
+}

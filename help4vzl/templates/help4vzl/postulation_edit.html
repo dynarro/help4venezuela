@@ -6,50 +6,45 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 {% block content %}
-<div>
-    <p class="postulation-text" style="font-size:20px; text-align:justify;">
-        Creating a postulation will allow you as an organization to become a former mediatory and be able to manage cases that need attention.
-    </p>
-</br>
-</div>
+  <div>
+    </br>
+        <p class="postulation-text" style="font-size:20px; text-align:center">
+            Creating a postulation will allow you as an organization to become a former mediatory and be able to manage cases that need attention.
+        </p>
+    </br>
+  </div>
 
-<div>
-    
-    <!-- block of caterogories related to a case -->
+  <div>
+      <div class="col-md-6 col-md-offset-3">
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title" style="text-align:center;font-size:18px;font-family: 'Merriweather Sans', sans-serif;">
+                        <b style="color:#114870;">Create a postulation</b>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <form method="POST">{% csrf_token %}
+                        {% for field in form %}
+                            <div class="form-group">
+                                <label class="conrol-label" for='{{field.id_for_label}}'>{{field.label}}</label>
+                                {{field}}
+                                {% for error in field.errors %}
+                                    <p class="help is-danger">{{error}}</p>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                        <!--{% bootstrap_form form layout='inline' %}-->
 
-</div>
+                        <hr/>
 
-<div>
-    <div class="col-md-12 col-md-offset-3">
-    <div class="panel-group">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title" style="text-align:center;font-size:18px;font-family: 'Merriweather Sans', sans-serif;">
-                    <b style="color:#114870;">Create a postulation</b>
-                </h3>
+                        <center>
+                            <input class="btn btn-success btn-block" type="submit" value="Save"/>
+                        </center>
+                    </form>
+                </div>
             </div>
-            <div class="panel-body">
-                <form method="POST">{% csrf_token %}
-                    {% for field in form %}
-                        <div class="form-group">
-                            <label class="conrol-label" for='{{field.id_for_label}}'>{{field.label}}</label>
-                            {{field}}
-                            {% for error in field.errors %}
-                                <p class="help is-danger">{{error}}</p>
-                            {% endfor %}
-                        </div>
-                    {% endfor %}
-                    <!--{% bootstrap_form form layout='inline' %}-->
-
-                    <hr/>
-
-                    <center>
-                        <input class="btn btn-success btn-block" type="submit" value="Save"/>
-                    </center>
-                </form>
-            </div>
-        </div>
+      </div>
     </div>
-</div>
-</div>
+  </div>
 {% endblock %}

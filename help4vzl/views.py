@@ -12,7 +12,7 @@ from django.contrib.sites.shortcuts import get_current_site
 
 
 def postulation(request):
-    return render(request, 'help4vzl/postulation.html', {})
+    return render(request, 'help4vzl/landingpage.html', {})   
 
 def postulation_new(request):
     if request.method == "POST":

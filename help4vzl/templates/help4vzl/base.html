@@ -3,20 +3,10 @@
 {% load bootstrap3 %}
 <html>
     <head>
-        <title>Help 4 Venezuela</title>
-    </head>
-<body>
-    <div class="page-header">
-        <div class="dropdown">
-            <button class="dropbtn"><i class="material-icons">menu</i></button>
-
-            <div class="dropdown-content">
-                <a href="/">Home</a>
-                <a href="{% url 'postulation_new' %}">Create Postulation</a> 
-            </div>
-        </div>
-        <h1 style="font-family: 'Patrick Hand', cursive;"><a href="/">Help 4 Venezuela</a></h1>
-        <!--<a href="{% url 'postulation_new' %}" class="sidebar-nav"><span>Add Postulation</span></a>-->
+      {# Load CSS and JavaScript #}
+      {% bootstrap_css %}
+      {% bootstrap_javascript %}
+        <title>Help4Venezuela</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
@@ -28,21 +18,29 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Abel|Asap|Merriweather+Sans:300i|Patrick+Hand|Anton|Fjalla+One" rel="stylesheet">
         <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-        {# Load CSS and JavaScript #}
-        {% bootstrap_css %}
-        {% bootstrap_javascript %}
+        
 
-        {# Display django.contrib.messages as Bootstrap alerts #}
-        {% bootstrap_messages %}
 
-    </div>
-    <div class="content container">
-        <div class="row">
-            <div class="col-md-8">
-            {% block content %}
-            {% endblock %}
+    </head>
+<body>
+    <div class="page-header">
+        <div class="dropdown">
+            <button class="dropbtn"><i class="material-icons">menu</i></button>
+
+            <div class="dropdown-content">
+                <a href="/">Home</a>
+                <a href="{% url 'postulation_new' %}">Create Postulation</a>
             </div>
         </div>
     </div>
+        <!--<a href="{% url 'postulation_new' %}" class="sidebar-nav"><span>Add Postulation</span></a>-->
+
+        {# Display django.contrib.messages as Bootstrap alerts #}
+        {% bootstrap_messages %}
+{% block content %}
+{% endblock %}
+<div class="footer">
+  <a href="mailto:help4venezuela18@gmail.com">Contact</a>
+</div>
 </body>
 </html>
