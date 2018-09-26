@@ -18,7 +18,7 @@ class CaseAdmin(admin.ModelAdmin):
 
 @admin.register(Postulation)
 class PostulationAdmin(admin.ModelAdmin):
-    list_display=('name','motivation','status',)
+    list_display=('name','email','status',)
     list_filter=('name','status',)
 
 
@@ -26,3 +26,8 @@ class PostulationAdmin(admin.ModelAdmin):
 class OrganizationAdmin(admin.ModelAdmin):
     list_display=('name','email','description',)
     list_filter=('name',)
+
+@admin.register(OrganizationUser)
+class OrganizationUserAdmin(admin.ModelAdmin):
+    list_display=('user', 'organization',)
+    list_filter=('user', 'organization',)

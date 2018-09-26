@@ -54,14 +54,22 @@ def send_postulation_status_email(postulation):
     else:
         pass
 
+def create_organization_user(org):
+    (user, created) = User.objects.get_or_create(username=org.email, email=org.email)
+    (org_user, created) = OrganizationUser.objects.get_or_create(user=user,
+                                                                 organization=org,)
+
+# Creates an organization when the postulation status isn't new
 def create_organization(postulation):
-    if postulation.status != 'NEW':
-        Organization.objects.get_or_create(name=postulation.name,
-                                           email=postulation.email,
-                                           phone_number=postulation.phone_number,
-                                           logo=postulation.logo,
-                                           description=postulation.motivation
-                                           )
+    (org, created)= Organization.objects.get_or_create(name=postulation.name,
+                                                       email=postulation.email,
+                                                       )
+    org.phone_number=postulation.phone_number
+    org.logo=postulation.logo
+    org.description=postulation.motivation
+    org.save()
+    create_organization_user(org)
+    return org
 
 class Postulation(models.Model):
     name=models.CharField(max_length=50)
@@ -80,23 +88,32 @@ class Postulation(models.Model):
 
         )
     status=models.CharField(choices=STATUS_CHOICES, default='NEW', max_length=10)
-
+# the save method calls the `send_postulation_status_email` functions
+# when a postulation is created.
     def save(self, *args, **kwargs):
+        if self.status != 'NEW':
+            org=create_organization(self)
+            if org is not None:
+                self.organization=org
+
         super(Postulation, self).save(*args, **kwargs)  # Call the "real" save() method.
         send_postulation_status_email(self)
-        create_organization(self)
 
 
 class Organization(models.Model):
-    name=models.CharField(max_length=100)
-    email=models.EmailField()
+    name=models.CharField(max_length=10, unique=True)
+    email=models.EmailField(unique=True)
     phone_number=models.CharField(max_length=13, default=0)
     logo=models.ImageField(null=True, blank=True, upload_to="logos/%Y")
     description=models.TextField(blank=True, null=True)
 
+    def __unicode__(self):
+        return self.name
+
+
 class OrganizationUser(models.Model):
     user=models.OneToOneField(User, on_delete=models.SET_NULL, null=True, blank=True)
-    organization=models.ForeignKey(Organization)
+    organization=models.ForeignKey('Organization',null=True, blank=True)
 
 class Collaborator(models.Model):
     user=models.OneToOneField(User, on_delete=models.SET_NULL, null=True, blank=True)
