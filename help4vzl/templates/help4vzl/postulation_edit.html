@@ -24,16 +24,21 @@
                     </h3>
                 </div>
                 <div class="panel-body">
-                    <form method="POST">{% csrf_token %}
-                        {% for field in form %}
-                            <div class="form-group">
-                                <label class="conrol-label" for='{{field.id_for_label}}'>{{field.label}}</label>
-                                {{field}}
-                                {% for error in field.errors %}
-                                    <p class="help is-danger">{{error}}</p>
-                                {% endfor %}
-                            </div>
-                        {% endfor %}
+                    {% if form.is_multipart %}
+                        <form method="POST" enctype="multipart/form-data">
+                    {% else %}
+                        <form method="post">
+                    {% endif %}
+                            {% csrf_token %}
+                            {% for field in form %}
+                                <div class="form-group">
+                                    <label class="control-label" for='{{field.id_for_label}}'>{{field.label}}</label>
+                                    {{field}}
+                                    {% for error in field.errors %}
+                                        <p class="help is-danger">{{error}}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
                         <!--{% bootstrap_form form layout='inline' %}-->
 
                         <hr/>
@@ -44,7 +49,7 @@
                     </form>
                 </div>
             </div>
-      </div>
+            </div>
     </div>
   </div>
 {% endblock %}

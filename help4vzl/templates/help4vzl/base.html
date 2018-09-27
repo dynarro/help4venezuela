@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Abel|Asap|Merriweather+Sans:300i|Patrick+Hand|Anton|Fjalla+One" rel="stylesheet">
         <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-        
+
 
 
     </head>
@@ -30,6 +30,9 @@
             <div class="dropdown-content">
                 <a href="/">Home</a>
                 <a href="{% url 'postulation_new' %}">Create Postulation</a>
+                {% if user.is_authenticated %}<a href="{% url 'postulation_detail' pk=postulation.pk %}">Your Postulation</a>{% endif %}
+                {% if user.is_authenticated %}<a href="{% url 'logout' %}">Logout</a>{% else %}<a href="{% url 'login' %}">Login</a>{% endif %}
+
             </div>
         </div>
     </div>
