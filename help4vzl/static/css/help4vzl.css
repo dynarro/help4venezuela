@@ -37,7 +37,7 @@ html, body {
    font-size: 500%;
    font-family: 'Fjalla One', sans-serif;
 }
-.btn {
+.btn-home {
    border-radius: 5px;
    color: #FFFF;
    font-size: 30px;
@@ -53,7 +53,7 @@ html, body {
     width: 100%;
     bottom: 10;
     left: 0;
-    background-image: url(https://images.pexels.com/photos/242236/pexels-photo-242236.jpeg?auto=compress&cs=tinysrgb&h=650&w=940);
+    background-image: url(images/background.jpeg);
     padding: 0px 0px 0px 20px;
     position: relative;
     border-bottom: none;
@@ -140,7 +140,7 @@ html, body {
 
 .footer {
   overflow: hidden;
-  background-image: url(https://images.pexels.com/photos/242236/pexels-photo-242236.jpeg?auto=compress&cs=tinysrgb&h=650&w=940);
+  background-image: url('/static/images/footer.jpeg');
   position: fixed;
   bottom: 0;
   width: 100%;
