@@ -18,9 +18,9 @@ def postulation(request):
     if request.user.is_authenticated:
         org_user = OrganizationUser.objects.get(user=request.user)
         postulation = Postulation.objects.get(organization=org_user.organization)
-        return render(request, 'help4vzl/postulation.html', {'postulation':postulation})
+        return render(request, 'help4vzl/landingpage.html', {'postulation':postulation})
     else:
-        return render(request, 'help4vzl/postulation.html')
+        return render(request, 'help4vzl/landingpage.html')
 def postulation_new(request):
     if request.method == "POST":
         form = PostulationForm(request.POST)

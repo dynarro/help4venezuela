@@ -1,23 +1,69 @@
-.page-header{
-    background-color:#114870;
-    padding-bottom:20%;
-    height: 30%;
-    margin-top: 0%;
-    padding: 20px 20px 20px 20px;
+/*home page */
+
+html, body {
+   margin: 0;
+   padding:0;
+   height: 100%;
+   width: 100%;
+}
+.intro {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  background: url(https://images.pexels.com/photos/953214/pexels-photo-953214.jpeg) no-repeat 50% 50%;
+  display: table;
+  top: 0;
+  background-size: cover;
+  font-family: 'Fjalla One', sans-serif;
+
 }
 
-.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-      color: #ffffff;
-      font-size: 35pt;
-      text-align: center;
-      vertical-align: middle;
-      text-decoration: none;
- }
-
- h1, h2, h3, h4 {
-     font-family: 'Hind', sans-serif;
+.intro .inner {
+   display: table-cell;
+   vertical-align: middle;
+   width: 100%;
+   max-width: none;
+}
+.content {
+   max-width: 600px;
+   margin: 0 auto;
+   text-align: center;
+   font-family: 'Lato', sans-serif;
+   color: #FFFF;
+}
+.content h1 {
+   color: #F9F3F4;
+   text-shadow: 0px 0px 300px #000;
+   font-size: 500%;
+   font-family: 'Fjalla One', sans-serif;
+}
+.btn {
+   border-radius: 5px;
+   color: #FFFF;
+   font-size: 30px;
+   padding: 10px 20px;
+   border: solid #FFFF;
+   text-transform: uppercase;
+   text-decoration: none;
 }
 
+/*header*/
+
+.header{
+    width: 100%;
+    bottom: 10;
+    left: 0;
+    background-image: url(https://images.pexels.com/photos/242236/pexels-photo-242236.jpeg?auto=compress&cs=tinysrgb&h=650&w=940);
+    padding: 0px 0px 0px 20px;
+    position: relative;
+    border-bottom: none;
+    margin: 10px 0 -46px;
+
+}
+/*helps fix blank space in header*/
+.text-fix{
+  padding-top: 10;
+}
 
 /* Dropdown Button */
 .dropbtn {
@@ -26,12 +72,14 @@
     border: none;
     cursor:pointer;
     overflow: hidden;
+
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
     display: inline-block;
+
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -67,14 +115,6 @@
 .postulation-form textarea, .postulation-form input {
     width: 100%;
 }
-/* css for category box */
-div.category{
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    padding: 5px;
-    border: 1px solid grey;
-}
 
 /* text block on the category box */
 .text-block {
@@ -93,7 +133,36 @@ div.category{
   width: 30em;
 }
 
-p.postulation-text {
+.postulation-text {
     font-family: 'Abel', sans-serif;
     font-size: 16px;
+}
+
+.footer {
+  overflow: hidden;
+  background-image: url(https://images.pexels.com/photos/242236/pexels-photo-242236.jpeg?auto=compress&cs=tinysrgb&h=650&w=940);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer a {
+  float: left;
+  display: block;
+  color: #64A8FF;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: 'Chivo', sans-serif;
+}
+
+.footer a:hover {
+  background: #f1f1f1;
+  color: #64A8FF;
+}
+
+.footer a.active {
+  background-color: #64A8FF;
+  color: white;
 }
