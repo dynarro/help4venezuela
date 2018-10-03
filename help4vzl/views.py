@@ -23,7 +23,7 @@ def postulation(request):
         return render(request, 'help4vzl/landingpage.html')
 def postulation_new(request):
     if request.method == "POST":
-        form = PostulationForm(request.POST)
+        form = PostulationForm(request.POST, request.FILES)
         if form.is_valid():
                 postulation = form.save(commit=False)
                 postulation.save()
@@ -46,6 +46,8 @@ def postulation_edit(request, pk):
     if request.method == "POST":
         form = PostulationForm(request.POST, request.FILES or None, instance=postulation)
         if form.is_valid():
+
+            print(form, request.FILES)
             postulation = form.save(commit=False)
             postulation.save()
             if request.user.is_authenticated():
