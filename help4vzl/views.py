@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.conf import settings
+from django.core import signing
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
@@ -12,6 +13,8 @@ from .forms import PostulationForm
 from .models import Postulation, Categorie, OrganizationUser
 from django.contrib.sites.shortcuts import get_current_site
 
+
+REGISTRATION_SALT = getattr(settings, 'REGISTRATION_SALT', 'registration')
 
 
 def postulation(request):

@@ -19,6 +19,10 @@ EMAIL_PORT = 587
 ADMINS = [('admin', 'help4venezuela18@gmail.com'),]
 import os
 
+# Django registration
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_OPEN = True
+# REGISTRATION_SALT =
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -47,7 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'help4vzl',
     'django_extensions',
-    'bootstrap3'
+    'bootstrap3',
+    'django_registration'
 ]
 SITE_ID = 1
 

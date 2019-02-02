@@ -1,0 +1,61 @@
+{% extends 'help4vzl/base.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="register-panel panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Register</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" action="" class="form-horizontal">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label class="col-xs-3 control-label">User:</label>
+                                <div class="col-xs-8">
+                                    <input type="text" class="form-control" name="username"/>
+                                    {{ form.username.errors }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-3 control-label">Name:</label>
+                                <div class="col-xs-8">
+                                    <input type="text" class="form-control" name="first_name"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-3 control-label">Last Name:</label>
+                                <div class="col-xs-8">
+                                    <input type="text" class="form-control" name="last_name"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-3 control-label">Email<span style="color:red;"> *</span>:</label>
+                                <div class="col-xs-8">
+                                    <input type="text" class="form-control" name="email"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-3 control-label">Password:</label>
+                                <div class="col-xs-8">
+                                    <input class="form-control" type="password" name="password1" placeholder="password"/>
+                                    <span style="font-color:red;">{{ form.password.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-3 control-label">Password:</label>
+                                <div class="col-xs-8">
+                                    <input class="form-control" name="password2" type="password" placeholder="conferm password"/>
+                                    {{ form.password2.errors }}
+                                </div>
+                            </div>
+                            {{userform}}
+                            {{userprofileform}}
+                            <center>
+                                <input class="btn btn-success btn-sm" type="submit" value="register">
+                            </center>
+                        </form>
+                    </div>
+{% endblock %}
